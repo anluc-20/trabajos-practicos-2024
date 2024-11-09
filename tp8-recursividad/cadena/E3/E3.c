@@ -11,11 +11,10 @@ a X se dice que es perfecto.
 #include <stdio.h>
 
 int pertenece(int buscado, int numero);
-int sumar_divisores(int numero, int divisor);
 
 int main()
 {
-        int buscado, numero, suma_divisores;
+        int buscado, numero;
         buscado = 0;
         numero = 45673;
         if(pertenece(buscado, numero))
@@ -23,16 +22,6 @@ int main()
         else
                 printf("el numero %d no esta en %d\n", buscado, numero);
 
-        buscado = 0;
-
-        suma_divisores = sumar_divisores(buscado, buscado);
-        printf("numero: %d, suma de sus divisores: %d\n", buscado, suma_divisores);
-        if(suma_divisores > buscado)
-                printf("el numero es abundante\n");
-        if(suma_divisores < buscado)
-                printf("el numero es deficiente\n");
-        if(suma_divisores == buscado)
-                printf("el numero es perfecto\n");
         return 0;
 }
 
@@ -47,18 +36,5 @@ int pertenece(int buscado, int numero)
                         return pertenece(buscado, numero/10);
                 else
                         return 0;
-        }
-}
-
-int sumar_divisores(int numero, int divisor)
-{
-        if(divisor == 0) {
-                return 0;
-        }
-        else {
-                if((numero%divisor == 0) && (numero != divisor))
-                        return divisor + sumar_divisores(numero, divisor - 1);
-                else
-                        return sumar_divisores(numero, divisor - 1);
         }
 }
