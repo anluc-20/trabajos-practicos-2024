@@ -1,0 +1,14 @@
+# ignora todas las carpetas output del directorio 
+**/output
+
+# ignora todos los ejecutables del directorio
+*.exe 
+
+# ignora todos los archivos pdf del directorio
+*.pdf
+
+# ignora los archivos de vscode
+*.code-workspace
+
+# ignora todos los archivos zip
+*.zip
