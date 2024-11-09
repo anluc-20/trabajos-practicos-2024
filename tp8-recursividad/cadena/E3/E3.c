@@ -1,40 +1,44 @@
-/*
-Ejercicio 2: Para las siguientes situaciones, realice un módulo recursivo y la traza con los datos indicados 
-para cada una: 
-a) Dado un dígito D, determinar si pertenece a un número entero positivo N. Realizar la traza para 
-D=1 y X= 45673. 
-b) Dado un número natural, indicar si el mismo es perfecto, abundante o deficiente. 
-Nota: Un número natural X se dice que es deficiente si la suma de sus divisores (sin contarse a sí mismo) 
-es menor a X. Si la suma de sus divisores es mayor a X se dice que el número es abundante y si es igual 
-a X se dice que es perfecto.
-*/
+
+// Ejercicio  3:  Realice  la  traza  del  siguiente  programa  con  los valores
+// 30  y  525.  Elabore  una  consigna indicando qué hace el programa.
 #include <stdio.h>
-
-int pertenece(int buscado, int numero);
-
-int main()
-{
-        int buscado, numero;
-        buscado = 0;
-        numero = 45673;
-        if(pertenece(buscado, numero))
-                printf("el numero %d esta en %d\n", buscado, numero);
-        else
-                printf("el numero %d no esta en %d\n", buscado, numero);
-
+void averigua(int, int);
+int main(void) {
+        int x;
+        printf("\n Ingrese un número natural ");
+        scanf("%d", &x);
+        averigua(x, 2);
         return 0;
 }
-
-int pertenece(int buscado, int numero)
-{
-        if(numero%10 == buscado) {
-                return 1;
-        }
-        else {
-                if(numero > 10)
-                        
-                        return pertenece(buscado, numero/10);
-                else
-                        return 0;
-        }
+void averigua(int N, int f) {
+if (N > 1) // n es mayor que 1
+        if (N % f == 0) { // si el resto de dividir n y f es 0
+                printf("\t %d", f); // muestro f
+                averigua(N / f, f); // llamo a averigua(n/f, f)
+        } else
+                averigua(N, f + 1); // llamo a averigua(n, f+1)
+else    // muestro 1
+        printf("\t %d", 1);
 }
+
+/*
+        averigua(30,2) -> "2"
+                averigua(15, 2)
+                        averigua(15, 3) -> "3"
+                                averigua(5, 3)
+                                        averigua(5, 4)
+                                                averigua(5, 5) -> "5"
+                                                        averigua(1, 5) -> "1"
+        
+        averigua(525, 2)
+                averigua(525, 3) -> "3"
+                        averigua(175, 3)
+                                averigua(175, 4)
+                                        averigua(175, 5) -> "5"
+                                                averigua(35, 5) -> "5"
+                                                        averigua(7, 5)
+                                                                averigua(7, 6)
+                                                                        averigua(7, 7) -> "1"
+        El algoritmo encuentra los factores primos de un numero dado, sin tener en cuenta el 1 que muestra al final(el 1 no es primo)
+*/
+
