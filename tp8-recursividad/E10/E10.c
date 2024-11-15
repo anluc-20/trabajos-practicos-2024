@@ -20,7 +20,7 @@ int main()
         getchar();
 
         cargar_nombres(&nombres, n);
-        //ordenar_nombres(&nombres);
+        ordenar_nombres(&nombres);
         mostrar_nombres(&nombres);  
         return 0;
 }
