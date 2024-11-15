@@ -9,12 +9,11 @@
 
 void lee_cad(Cadena cadena, int indice)
 {
-        int c = getchar();
-
+	int c = getchar();
 
         if(((c == '\n') || (c == EOF) || (indice >= CAD_MAX_SIZE - 1)) && (indice != -1)) {
                 cadena[indice] = '\0';
-                indice = -1;
+		indice = -1;
         }
         
         if(indice != -1) {
@@ -41,6 +40,7 @@ void lee_cad(Cadena cadena, int indice)
 void ingresar_cadena(Cadena cadena)
 {
         lee_cad(cadena, 0);
+		printf("termine de cargar la cadena\n");
 }
 void mostrar_cadena(Cadena cadena)
 {

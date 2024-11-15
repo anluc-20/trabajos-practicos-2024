@@ -1,11 +1,10 @@
 #include "lista_nombres.h"
-#include <stdio.h>
 
 void enlazar_array(ListaNombres *lista, int indice)
 {
         if(indice > 0)
                 enlazar_array(lista, indice - 1);
-        printf("enlazando en indice: %d\n", indice);
+        
         lista->p[indice] = &lista->arr[indice];
 }
 ListaNombres crear_lista_nombres()
@@ -19,7 +18,6 @@ void cargar_nombres_r(ListaNombres *lista, int indice)
 {
         if(indice > 0)
                 cargar_nombres_r(lista, indice - 1);
-        printf("cargando en indice: %d\n", indice);
         ingresar_cadena(*lista->p[indice]);
         mostrar_cadena(*lista->p[indice]);
 }

@@ -12,3 +12,6 @@
 
 # ignora todos los archivos zip
 *.zip
+
+#ignora todos los zpr
+*.zpr
