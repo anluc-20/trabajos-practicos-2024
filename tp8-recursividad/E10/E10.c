@@ -10,14 +10,18 @@ int main()
 {
         int n;
         ListaNombres nombres = crear_lista_nombres();
-        scanf("%s", *nombres.p[0]);
-        printf("%s", *nombres.p[0]);
-        mostrar_cadena(*nombres.p[0]);
-        //printf("ingrese la cantidad de nombres: ");
-        //scanf("%d", &n);
-        //cargar_nombres(&nombres, n);
+        //scanf("%s", *nombres.p[0]);
+        //printf("%s", *nombres.p[0]);
+        //mostrar_cadena(*nombres.p[0]);
+        //ingresar_cadena(*nombres.p[1]);
+        //mostrar_cadena(*nombres.p[1]);
+        printf("ingrese la cantidad de nombres: ");
+        scanf("%d", &n);
+        getchar();
+
+        cargar_nombres(&nombres, n);
         //ordenar_nombres(&nombres);
-        //mostrar_nombres(&nombres);  
+        mostrar_nombres(&nombres);  
         return 0;
 }
 
