@@ -1,21 +1,23 @@
 /*
-        Ejercicio 10: Se desea crear una lista de N nombres. Utilizar leeCad Recursivo A continuación, se desea ordenarla ascendentemente utilizando el método M-Sort y por último mostrar la lista resultante Nota: TAD con todos sus módulos recursivos. 
+        Ejercicio 10: Se desea crear una lista de N nombres.
+        Utilizar leeCad Recursivo A continuación, se desea ordenarla ascendentemente utilizando el método M-Sort y 
+        por último mostrar la lista resultante Nota: TAD con todos sus módulos recursivos. 
 */
-#include "../cadena/cadena_r.h"
-
-void merge(int lista[30], int inicio, int fin)
-{
-        int apuntador1, apuntador2, i;
-        apuntador1 = inicio;
-        apuntador2 = fin;
-
-}
+#include "lista_nombres.h"
+#include <stdio.h>
 
 int main()
 {
-        Cadena cadena;
-        ingresar_cadena(cadena);
-        mostrar_cadena(cadena);
+        int n;
+        ListaNombres nombres = crear_lista_nombres();
+        scanf("%s", *nombres.p[0]);
+        printf("%s", *nombres.p[0]);
+        mostrar_cadena(*nombres.p[0]);
+        //printf("ingrese la cantidad de nombres: ");
+        //scanf("%d", &n);
+        //cargar_nombres(&nombres, n);
+        //ordenar_nombres(&nombres);
+        //mostrar_nombres(&nombres);  
         return 0;
 }
 

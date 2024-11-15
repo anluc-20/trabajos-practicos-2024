@@ -1,4 +1,5 @@
 #include "cadena_r.h"
+#include <string.h>
 
 /*
 -poner carácter de cierre si c es EOF \n o tamaño maximo alcanzado y aún no se ha pueste el caracter de cierre
@@ -44,4 +45,9 @@ void ingresar_cadena(Cadena cadena)
 void mostrar_cadena(Cadena cadena)
 {
         printf("%s\n", cadena);
+}
+
+int comparar_cadena(Cadena a, Cadena b)
+{
+        return strcmp(a, b);
 }
