@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
 #define MAX_RAND 1000
 
 
@@ -88,3 +89,43 @@ void mostrar_mayores_que(NodoPtr cabeza, int numero)
                 cabeza = cabeza->siguiente;
         }
 }
+int es_primo(int numero)
+{
+        int mitad, i, primo;
+        primo = 1;
+        mitad = (numero / 2) + 1;
+        i = 2;
+        while((i < mitad) && (primo == 1)) {
+                if(numero%i == 0)
+                        primo = 0;
+                i++;
+        }
+        return primo;
+}
+void transformar_primos_en_negativos(NodoPtr cabeza)
+{
+        while(cabeza != NULL) {
+                if(es_primo(cabeza->numero))
+                        cabeza->numero *= -1;
+                cabeza = cabeza->siguiente;
+        }
+}
+void insertar_nodo_delante(NodoPtr cabeza, NodoPtr delante)
+{
+        if(cabeza->siguiente == NULL) {
+                cabeza->siguiente = delante;
+                return;
+        }
+
+        delante->siguiente = cabeza->siguiente;
+        cabeza->siguiente = delante;
+}
+void poner_ceros_adelante_de_pares(NodoPtr cabeza)
+{
+        while(cabeza != NULL) {
+                if(cabeza->numero%2 == 0)
+                        insertar_nodo_delante(cabeza, crear_nodo());
+                cabeza = cabeza->siguiente->siguiente;
+        }
+}
+

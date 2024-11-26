@@ -25,6 +25,7 @@ TLista carga_pacientes()
         TLista lista = inicializa_lista();
         printf("ingrese la cantidad de pacientes: ");
         scanf("%d", &lista.tam);
+        getchar(); //limpio el salto de linea
         carga_paciente_r(lista.lis, lista.tam - 1);
         return lista;
 }
@@ -58,6 +59,7 @@ void elimina_pacientes(TLista *lista)
         int posicion;
         posicion = elegir_paciente(lista);
         elimina_paciente_r(lista, posicion);
+        lista->tam--;
         printf("se ha eliminado correctamente el paciente.\n");
 }
 void modifica_pacientes(TLista *lista)

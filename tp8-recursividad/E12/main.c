@@ -38,6 +38,7 @@ void menu_recursivo(TLista *A, TLista *D){
 	opciones();
 	printf("\nIngrese su eleccion: ");
 	scanf("%d", &rta);
+        getchar(); //limpio el salto de linea
 	switch(rta){
 	case 0: printf("\nA elegido Salir del Programa"); break;
 	case 1:
